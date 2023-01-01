@@ -1,42 +1,27 @@
-import React from "react";
-import Button from "./components/Button";
-import { GoBell, GoDatabase, GoCloudDownload } from "react-icons/go";
+import Accordion from "./components/Accordion";
+
 function App() {
-  const handelClick = () => {
-    console.log("Click");
-  };
-  return (
-    <div>
-      <div>
-        <Button primary rounded className="mb-5" onMouseEnter={handelClick}>
-          <GoBell />
-          Click Me!
-        </Button>
-      </div>
-      <div>
-        <Button secondary outline rounded onClick={handelClick}>
-          <GoDatabase />
-          Buy Now
-        </Button>
-      </div>
-      <div>
-        <Button success>
-          <GoCloudDownload />
-          See ya
-        </Button>
-      </div>
-      <div>
-        <Button warning outline>
-          See Deal
-        </Button>
-      </div>
-      <div>
-        <Button danger rounded>
-          Hide Ads
-        </Button>
-      </div>
-    </div>
-  );
+  const accordionData = [
+    {
+      id: "gjgjhgj",
+      label: "Can I use React in my project?",
+      content:
+        "Yes! You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.",
+    },
+    {
+      id: "dfdgjgjhgj",
+      label: "Can I use Angular in my project?",
+      content:
+        "Yes! You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.",
+    },
+    {
+      id: "wergjgjhgj",
+      label: "Can I use Vue in my project?",
+      content:
+        "Yes! You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.You can use in any of your project.",
+    },
+  ];
+  return <Accordion items={accordionData} />;
 }
 
 export default App;
