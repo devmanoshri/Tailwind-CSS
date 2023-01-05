@@ -12,11 +12,18 @@ function App() {
     { label: "Yellow", value: "Yellow" },
   ];
   return (
-    <Dropdown
-      options={dropdownOptions}
-      value={selection}
-      onChange={handelSelection}
-    />
+    <div className="flex">
+      <Dropdown
+        options={dropdownOptions}
+        value={selection}
+        onChange={handelSelection}
+      />
+      <Dropdown
+        options={dropdownOptions}
+        value={selection}
+        onChange={handelSelection}
+      />
+    </div>
   );
 }
 
