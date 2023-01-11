@@ -4,15 +4,18 @@ function Table({ tableData, config }) {
   const tableHeader = config.map((tableHead) => {
     return <th key={tableHead.label}>{tableHead.label}</th>;
   });
+
   const renderedData = tableData.map((fruit) => {
+    const renderedRow = config.map((rowData) => {
+      return (
+        <td key={rowData.render(fruit)} className="p-3">
+          {rowData.render(fruit)}
+        </td>
+      );
+    });
     return (
       <tr key={fruit.name} className="border-b">
-        <td className="p-3">{config[0].render(fruit)}</td>
-        <td className="p-3">
-          {/* <div className={`p-3 m-2 ${fruit.color}`}></div> */}
-          {config[1].render(fruit)}
-        </td>
-        <td className="p-3">{config[2].render(fruit)}</td>
+        {renderedRow}
       </tr>
     );
   });
