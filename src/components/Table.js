@@ -1,6 +1,6 @@
 import React from "react";
 
-function Table({ tableData, config }) {
+function Table({ tableData, config, keyFn }) {
   const tableHeader = config.map((tableHead) => {
     return <th key={tableHead.label}>{tableHead.label}</th>;
   });
@@ -8,7 +8,7 @@ function Table({ tableData, config }) {
   const renderedData = tableData.map((fruit) => {
     const renderedRow = config.map((rowData) => {
       return (
-        <td key={rowData.render(fruit)} className="p-3">
+        <td key={rowData.label} className="p-3">
           {rowData.render(fruit)}
         </td>
       );
