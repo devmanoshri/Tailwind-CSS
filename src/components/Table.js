@@ -1,7 +1,10 @@
-import React from "react";
+import { Fragment } from "react";
 
 function Table({ tableData, config, keyFn }) {
   const tableHeader = config.map((tableHead) => {
+    if (tableHead.header) {
+      return <Fragment key={tableHead.label}>{tableHead.header()}</Fragment>;
+    }
     return <th key={tableHead.label}>{tableHead.label}</th>;
   });
 
@@ -12,7 +15,7 @@ function Table({ tableData, config, keyFn }) {
           {rowData.render(fruit)}
         </td>
       );
-    });
+    }); 
     return (
       <tr key={fruit.name} className="border-b">
         {renderedRow}
